@@ -49,7 +49,7 @@ public class ScannerEx1 {
         // 공백 처리를 위해 sc.nextLine();을 사용해서 공백 담아내는 기능 설정
 
         // **************************************
-        // - next() / nextInt() / nextDouble() 등을 작성한 이 후에
+        //  - next() / nextInt() / nextDouble() 등을 작성한 이 후에
         // nextLine()을 작성해야하는 상황이 오면
         // nextLine()을 미리 한 번 작성하기
 
