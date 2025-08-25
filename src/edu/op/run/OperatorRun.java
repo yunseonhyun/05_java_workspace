@@ -38,11 +38,14 @@ public class OperatorRun {
         // 기존에 어떤 개발자가 만들어놓은 파일을 가져와서
         // 파일에 작성된 기능이나 변수값 활용해서 코딩하려해
         // new OperatorEx().test();
-        op.test(); // 새로운 객체를 생성해서 객체 내부에 존재하는 기능 사용하겠다.
+        //op.test(); // 새로운 객체를 생성해서 객체 내부에 존재하는 기능 사용하겠다.
 
-        op.method1();
-        op.method2();
+        //op.method1();
+        //op.method2();
+        //op.method3(); // OperatorEx 내부에 존재하는 method3() 기능을
+                      // op 별칭으로 호출하여 사용
 
+        op.method4();
     }
 
 
