@@ -1,3 +1,5 @@
+package edu.valiable;
+
 import java.util.Scanner;
 
 public class ScannerEx1 {
