@@ -1,11 +1,11 @@
-package edu.control.loof;
+package edu.control.loop;
 
 import java.util.Scanner;
 
 /*
 * 루프 기능 설정용 클래스
 * */
-public class LoofEx { // <html>과 같이 페이지 내 코드 시작을 나타내는 구문
+public class LoopEx { // <html>과 같이 페이지 내 코드 시작을 나타내는 구문
 
     /*
     * 1부터 10까지 출력하기
@@ -94,7 +94,9 @@ public class LoofEx { // <html>과 같이 페이지 내 코드 시작을 나타�
         int 최소 = Math.min(input1, input2);
         int 최대 = Math.max(input1, input2);
 
-        for(int i = 최소; i <= 최대;)
+        for(int i = 최소; i <= 최대; i++){
+            System.out.println(i);
+        }
     }
 
 } // </html>과 같이 페이지 내 코드 종료를 나타내는 구문

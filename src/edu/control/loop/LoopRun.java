@@ -1,14 +1,14 @@
-package edu.control.loof;
+package edu.control.loop;
 /**
  * 루프 기능 실행용 클래스
  */
 
-public class LoofRun {
+public class LoopRun {
     // 메인 실행 메서드 작성 후
     // 프로그램 실행 시 수행함
     // 클래스와 메서드를 중괄호 내부에 작성
     public static void main(String[] args) {
-        LoofEx ex = new LoofEx();
+        LoopEx ex = new LoopEx();
         // Heap(코드 창고) 영역에 존재하는
         // 개발자가 작성한 기능이나 데이터를
         //가져와 객체형태로 수행
@@ -17,7 +17,14 @@ public class LoofRun {
 
         //ex.method1(); // LoofEx 파일 내에 존재하는 메서드 기능 가져와서 실행
         //ex.method2();
-        ex.method3();
+        //ex.method3();
+        //ex.method4();
+
+        LoopEx2 ex2 = new LoopEx2();
+        // ex2.method1();
+
+        LoopEx3 ex3 = new LoopEx3();
+        ex3.method1();
     }
 
 }
