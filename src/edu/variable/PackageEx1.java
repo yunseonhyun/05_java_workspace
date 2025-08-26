@@ -1,4 +1,4 @@
-package edu.valiable;
+package edu.variable;
 /*
 * **** 자바 패키지 ****
 * 관련있는 클래스나 인터페이스를 묶어 놓은 이름 공간

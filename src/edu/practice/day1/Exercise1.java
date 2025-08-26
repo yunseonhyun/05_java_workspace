@@ -3,7 +3,7 @@ package edu.practice.day1;
 import java.util.Scanner;
 
 public class Exercise1 {
-    public void Excercise1() {
+    public void method1() {
         String name = "김자바";
         int age = 25;
         double height = 175.5;

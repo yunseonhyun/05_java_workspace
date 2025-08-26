@@ -1,4 +1,4 @@
-package edu.valiable;
+package edu.variable;
 
 public class VariableEx3 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package edu.valiable;
+package edu.variable;
 
 import java.util.Scanner;
 

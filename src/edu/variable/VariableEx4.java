@@ -1,4 +1,4 @@
-package edu.valiable;
+package edu.variable;
 
 public class VariableEx4 {
     // 메인 메서드 : 자바 프로그램을 실행하는 구문(기능)

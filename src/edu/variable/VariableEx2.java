@@ -1,4 +1,4 @@
-package edu.valiable;
+package edu.variable;
 
 public class VariableEx2 {
     // 메인 메서드 (=기능 행동) 프로그램 실행하는 구문

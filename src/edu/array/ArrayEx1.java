@@ -114,6 +114,9 @@ public class ArrayEx1 {
             arr[i] = sc.nextInt();
         }
         System.out.println("--- 배열에 추가된 값 확인 ---");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println("arr[" + i + "]의 값 : " + arr[i]);
+        }
         // for 문을 활용해서 배열에 추가된 숫자값을 확인
     }
 
