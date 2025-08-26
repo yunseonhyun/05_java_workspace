@@ -184,5 +184,69 @@ public class LoopEx3 {
 
 
     }
+
+
+    /*
+    * 사용자로부터 숫자 하나를 입력받아, 그 수의 구구단을 1부터 9까지 출력
+    * 출력할 단을 입력하세요 :
+    * for문 활용한 반복만 존재
+    * 1회 실행 후 종료
+    *
+    * method7
+    * */
+
+    public void method7() {
+        System.out.print("출력할 단을 입력하세요 : ");
+        int input = sc.nextInt();
+        // 숫자 입력 칸에 숫자가 아닌 문자를 입력하면 에러 발생
+        // 예외 처리 (try-catch)를 이용해서 추후 문제가 발생하기 않도록
+        // 처리할 예정
+
+        for(int i = 1; i <= 9; i++) {
+            System.out.printf("%d X %d = %d\n", input, i, input * i);
+        }
+
+
+    }
+
+
+    /*
+    * 비밀번호 : "java1234"
+    * 사용자가 올바른 비밀번호를 입력할 때 까지 입력받음
+    * 입력 횟수가 5회를 초과하면 "접속 차단합니다" 메세지 출력하고 종료
+    * do-while문 활용 while(true) 조건 입력 횟수가 5회를 초과했을때 break 활용
+    * 비밀번호를 입력하세요 :
+    * 시도횟수(0/5) 비밀번호를 입력하세요 :
+    *
+    * method8
+    *
+    * if(input.equals(checkPassword)) {} 문자열을 비교했을때 일치하는지 확인
+    *
+    * 변수이름 : String checkPassword = "java1234"
+    *           String input = "" // 비밀번호 입력하고 입력된 비밀번호 데이터 저장하는 변수이름
+    * int attempts = 0; // 시도 횟수
+    * */
+
+    public void method8() {
+        int attempts = 0;
+        String checkPassword = "java1234";
+
+        do {
+            System.out.printf("(%d / 5) 비밀번호를 입력하세요 : ", attempts);
+            String input = sc.nextLine();
+            if(input.equals(checkPassword)) {
+                System.out.print("비밀번호가 일치합니다");
+                break;
+            }
+            attempts++;
+            if(attempts == 5) {
+                System.out.printf("(%d / 5) 접속차단합니다." , attempts );
+                break;
+            }
+        } while(true);
+
+        }
+
+
 }
 
