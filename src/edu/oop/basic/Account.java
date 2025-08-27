@@ -32,7 +32,12 @@ public class Account {
     // 메서드(기능) - 필수생성자
     // c 형태 아래에 존재하는 f 형태에서 필요한 속성 명칭을 선택해서 생성
 
-
+    public Account(String name, String accountNumber, long balance, String password) {
+        this.password = password;
+        this.balance = balance;
+        this.accountNumber = accountNumber;
+        this.name = name;
+    }
     // 메서드(기능) - setter : html에서 사용자에게 전달받은 값을 자바의 변수이름 내부에 저장하는 역할
 
     /**
