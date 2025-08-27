@@ -47,6 +47,13 @@ public class Practice {
         Scanner sc = new Scanner(System.in);
         System.out.print("팩토리얼을 구할 숫자를 입력하세요 : ");
         int number = sc.nextInt();
+        long factorial = 1;
+        System.out.print(number + "! = " + number);
+        for(int i = number; i >= 1; i--){
+            System.out.print(" x " + i);
+            factorial =  factorial * i;
+        }
+        System.out.println(" = " + factorial);
 
 
     }
@@ -78,6 +85,58 @@ public class Practice {
 
 
     }
+
+    /**
+     * 문제 5번
+     */
+
+    public void method5() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("=== 구구단 프로그램 ===");
+        System.out.println("1. 특정 단 출력");
+        System.out.println("2. 전체 구구단 출력");
+        System.out.println("0. 종료");
+        System.out.print("선택 : ");
+
+        int choice = sc.nextInt();
+
+        if(choice == 1) {
+            System.out.print("몇 단을 출력하시겠습니까? ");
+            int dan = sc.nextInt();
+            System.out.println("[" + dan + "단]");
+            int i = 1;
+            while(i <= 9){
+                System.out.println(dan + " x " + i + " = " + dan * i);
+                i++;
+            }
+        }else if(choice == 2) {
+            int i = 1;
+            while(true){
+                int j = 1;
+                while(true){
+                    System.out.println(i + " x " + j + " = " + i * j);
+                    j++;
+                    if(j == 10){
+                        break;
+                    }
+
+                }
+                i++;
+                if(i == 10){
+                    break;
+                }
+
+
+
+            }
+
+        } else if(choice == 0) {
+            System.out.println("종료합니다.");
+        }
+
+    }
+
 
     /*
     * 문제 6번 : 숫자 맞히기 게임(1 ~50)
@@ -149,6 +208,126 @@ public class Practice {
         System.out.println("숫자 아닌 글자수 : " + letterCount);
         System.out.println("숫자 글자수 : " + digitCount);
         System.out.println("기타 문자(공백, 기호) : " + otherCount);
+
+    }
+
+
+    /**
+     * 8번 문제
+     */
+
+    public void method8() {
+        int[] score = new int[5];
+        Scanner sc = new Scanner(System.in);
+
+        int total;
+        double average;
+        int max;
+        int min;
+
+        System.out.println("5명의 성적을 입력하세요");
+        for(int i = 0; i < score.length; i++) {
+            System.out.print(i + 1  + "번 학생 : ");
+            score[i] = sc.nextInt();
+        }
+         total = score[0] + score[1] + score[2] + score[3] + score[4];
+        average = total/5;
+        max = score[0];
+        for(int i = 0; i < score.length; i++) {
+            if(max <= score[i]) {
+                max = score[i];
+            }
+        }
+
+        min = score[0];
+        for(int i = 0; i < score.length; i++) {
+            if(min >= score[i]) {
+                min = score[i];
+            }
+        }
+
+        System.out.println("=== 성적 통계 ===");
+        System.out.println("총점 : " + total + "점");
+        System.out.println("평균 : " + average + "점");
+        System.out.println("최고점 : " + max + "점");
+        System.out.println("최저점 : " + min + "점");
+
+
+
+    }
+
+
+    /*
+    * 9번 문제
+    * */
+    public void method9() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("배열 크기를 입력하세요 (1~10) : ");
+        int size = sc.nextInt();
+        int[] original = new int[size];
+        for(int i = 0; i < original.length; i++){
+            System.out.print(i + 1 + "번재 숫자 : ");
+            original[i] = sc.nextInt();
+        }
+
+        int[] reverse = new int[size];
+        for(int i = 0; i < original.length; i++){
+            reverse[i] = original[size - 1 - i];
+        }
+
+
+        System.out.print("원본 배열 : [" + original[0]);
+        for(int i = 1; i < size; i++){
+            System.out.print(", " + original[i] );
+        }
+        System.out.println("]");
+
+        System.out.print("뒤집힌 배열 : [" + reverse[0]);
+        for(int i = 1; i < size; i++){
+            System.out.print(", " + reverse[i] );
+        }
+        System.out.println("]");
+
+    }
+
+    /*
+    * 10번 문제
+    * */
+    public void method10() {
+        Scanner sc = new Scanner(System.in);
+        int[] lotto = new int[5];
+        int randomNum;
+        boolean isDuplicate = true;
+        String playAgain;
+
+        while(isDuplicate){
+        for (int i = 0; i < lotto.length; i++) {
+            randomNum = (int) (Math.random() * 20) + 1;
+            for (int j = 0; j < lotto.length; j++) {
+                if (lotto[j] == randomNum) {
+                    break;
+                }else {
+                    lotto[i] = randomNum;
+                }
+            }
+
+
+        }
+            isDuplicate = false;
+            System.out.println("=== 간단 로또 번호 생성기 ===");
+            System.out.print("생성된 번호 :");
+            for(int i = 0; i < lotto.length; i++){
+                System.out.print(" " + lotto[i]);
+            }
+            System.out.print("\n다시 생성하시겠습니까? (y/n) : ");
+            playAgain = sc.next();
+            if(playAgain.equals("y")){
+                isDuplicate = true;
+            }else{
+                isDuplicate = false;
+            }
+        }
+
 
     }
 }

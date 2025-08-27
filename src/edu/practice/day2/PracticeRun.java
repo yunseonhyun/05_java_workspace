@@ -4,10 +4,15 @@ public class PracticeRun {
     public static void main(String[] args) {
         Practice ex = new Practice();
         //ex.method1();
-        ex.method2();
+        //ex.method2();
+        //ex.method3();
         //ex.method4();
+        //ex.method5();
         //ex.method6();
         //ex.method7();
+        //ex.method8();
+        //ex.method9();
+        ex.method10();
         /** practice.method7()
          * 문자열을 숫자 포함해서 입력해보세요 : 안녕하세요 2025년 8월 입니다.
          *
