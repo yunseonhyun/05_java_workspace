@@ -101,6 +101,32 @@ public class Practice {
 
         int choice = sc.nextInt();
 
+        switch(choice){
+            case 1:
+                System.out.print("몇 단을 출력하시겠습니까? ");
+                int dan = sc.nextInt();
+                System.out.println("[" + dan + "단]");
+                for(int i = 1; i <= 9; i++){
+                    System.out.println(dan + " x " + i + " = " + dan * i);
+                }
+
+            case 2:
+                for(int j = 1; j <= 9; j++){
+                    for(int i = 1; i <= 9; i++){
+                        System.out.println(j + " x " + i + " = " + j * i);
+                    }
+
+                    }
+                break;
+
+            case 0:
+                System.out.println("종료합니다.");
+                return; // while 구문 탈출해서 기능 중지
+            default:
+                System.out.println("잘못된 선택입니다. 다시 선택해주세요");
+        }
+
+
         if(choice == 1) {
             System.out.print("몇 단을 출력하시겠습니까? ");
             int dan = sc.nextInt();
@@ -306,10 +332,10 @@ public class Practice {
             for (int j = 0; j < lotto.length; j++) {
                 if (lotto[j] == randomNum) {
                     break;
-                }else {
-                    lotto[i] = randomNum;
                 }
-            }
+            }lotto[i] = randomNum;
+
+
 
 
         }
