@@ -17,6 +17,7 @@ public class ShoppinMallTestRun {
         member1.setMemberName("김쇼핑");
         member1.setEmail("kim@email.com");
 
+
         member2.setMemberId("user002");
         member2.setMemberName("박구매");
         member2.setEmail("park@email.com");
