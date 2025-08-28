@@ -1,5 +1,6 @@
 package edu.practice.day2;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Practice {
@@ -257,7 +258,7 @@ public class Practice {
             score[i] = sc.nextInt();
         }
          total = score[0] + score[1] + score[2] + score[3] + score[4];
-        average = total/5;
+        average = (double) total/5;
         max = score[0];
         for(int i = 0; i < score.length; i++) {
             if(max <= score[i]) {
@@ -290,6 +291,10 @@ public class Practice {
         Scanner sc = new Scanner(System.in);
         System.out.print("배열 크기를 입력하세요 (1~10) : ");
         int size = sc.nextInt();
+        if(size < 1 || size > 10){
+            System.out.println("1~10 사이의 숫자를 입력하세요 : ");
+            return;
+        }
         int[] original = new int[size];
         for(int i = 0; i < original.length; i++){
             System.out.print(i + 1 + "번재 숫자 : ");
@@ -321,39 +326,30 @@ public class Practice {
     * */
     public void method10() {
         Scanner sc = new Scanner(System.in);
-        int[] lotto = new int[5];
-        int randomNum;
-        boolean isDuplicate = true;
-        String playAgain;
+        int[] lotto = new int[6];
 
-        while(isDuplicate){
-        for (int i = 0; i < lotto.length; i++) {
-            randomNum = (int) (Math.random() * 20) + 1;
-            for (int j = 0; j < lotto.length; j++) {
-                if (lotto[j] == randomNum) {
+        for(int i = 0; i < lotto.length; i++){
+            while(true) { // 중복 검사 확인
+                int randomNum = (int)(Math.random() * 45) + 1;
+                boolean isDuplicated = false;
+                for(int j = 0; j < i; j++){
+                    if(randomNum == lotto[j]){
+                        isDuplicated = true; // 랜덤번호가 기존 번호들이랑 동일하다면
+                        break; // 중복을 찾았으니for문 탈출
+                    }
+                }
+
+                // 중복되지 않았다면 번호를 배열에 저장
+                if(!isDuplicated){
+                    lotto[i] = randomNum;
                     break;
                 }
-            }lotto[i] = randomNum;
 
-
-
-
-        }
-            isDuplicate = false;
-            System.out.println("=== 간단 로또 번호 생성기 ===");
-            System.out.print("생성된 번호 :");
-            for(int i = 0; i < lotto.length; i++){
-                System.out.print(" " + lotto[i]);
-            }
-            System.out.print("\n다시 생성하시겠습니까? (y/n) : ");
-            playAgain = sc.next();
-            if(playAgain.equals("y")){
-                isDuplicate = true;
-            }else{
-                isDuplicate = false;
             }
         }
 
-
+        // 생성된 번호 출력
+        System.out.println("생성된 번호 : " + Arrays.toString(lotto));
+        System.out.println("프로그램을 종료합니다.");
     }
 }
