@@ -90,7 +90,15 @@ public class Practice1 {
 
     }
 
+    public void displatInfo() {
+        if(isAvailable == true) {
+            System.out.println("대출 가능 : 가능");
+        } else {
+            System.out.println("대출 가능 : 불가능");
+        }
+    }
+
     public void displayBook() {
-        System.out.printf("제목 : %s\n저자 : %s\n가겨 : %d\n대출 가능: %b\n", title,  author, price, isAvailable);
+        System.out.printf("제목 : %s\n저자 : %s\n가격 : %d\n", title,  author, price);
     }
 }

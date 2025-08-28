@@ -75,7 +75,7 @@ public class MethodEx {
     1. 매개변수의 자료형 개수가 다른 경우
     2. 매개변수의 개수가 다른 경우
     3. 매개변수의 개수는 같지만 타입이 다른 경우
-    4. 매개변수의 개수와 타임이 같지만 순서가 다른 경우
+    4. 매개변수의 개수와 타입이 같지만 순서가 다른 경우
 
      생성자는 오버로딩 해당
      생성자 ┌ 기본 생성자 : 매개변수 존재하지 않는 생성자
@@ -114,8 +114,8 @@ public class MethodEx {
     }
 
     // 6-5 매개변수에서 자료형이 동일하고 갯수도 동일할 경우
-    public void login(String email) {
+    //public void login(String email) {
         // 'login(String)'이(가) 'edu.oop.method.MethodEx'에 이미 정의되어 있습니다
         // 에러 발생
     }
-}
+

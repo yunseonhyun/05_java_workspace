@@ -16,6 +16,7 @@ package edu.practice.day3;
             p1.setAvailable(p1.isAvailable());
             System.out.println("=== 도서 정보 ===");
             p1.displayBook();
+            p1.displatInfo();
             p1.borrowBook();
             p1.returnBook();
 
