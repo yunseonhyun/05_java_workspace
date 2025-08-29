@@ -2,6 +2,8 @@ package edu.oop.method.ex;
 
 import java.util.Scanner;
 
+import static edu.oop.method.ex.LibraryMember.getTotalMemberCount;
+
 /**
  * 도서관 회원 관리 기능 시스템 클래스
  */
@@ -138,12 +140,25 @@ public class LibraryService {
                 case 6: // 도서관 입장/퇴장
                     System.out.println("1=입장 / 2=퇴장");
                     System.out.print("선택: ");
+                    selected = sc.nextInt();
+                    if (selected < 1 || selected > 2) {
+                        System.out.println("잘못된 번호입니다. 1~2 중 선택하세요.");
+                        return;
+                    } else if(selected == 1){
+                        enterLibrary();
+                    } else exitLibrary();
                     // enterLibrary() 또는 exitLibrary() 메서드 호출
                     break;
 
                 case 7: // 도서관 통계 확인
                     System.out.println("=== 도서관 운영 통계 ===");
                     // static 변수들과 상수들 출력
+                    System.out.println("전체 회원 수 : " + LibraryMember.totalMemberCount + "명");
+                    System.out.println("현재 방문자 수 : " + LibraryMember.currentVisitorCount + "명");
+                    System.out.println("도서관 이름 : " + LibraryMember.LIBRARY_NAME);
+                    System.out.println("도서관 운영시간 : " + LibraryMember.OPENING_HOURS);
+                    System.out.println("최대 대출 권수 : " + LibraryMember.MAX_BORROW_BOOKS + "권");
+                    System.out.println("최소 가입 연령 : " + LibraryMember.MIN_AGE_LIMIT + "세");
                     break;
             }
         }
@@ -163,6 +178,13 @@ public class LibraryService {
         String creatNumber = sc.next();
         System.out.println("멤버 나이 입력하세요 : ");
         int creatAge = sc.nextInt();
+        if(creatAge < LibraryMember.MIN_AGE_LIMIT ) {
+            System.out.println(LibraryMember.MIN_AGE_LIMIT + "이하이므로 가입할 수 없습니다.");
+            return null; // private 옆에 접근 제한자와 기능명칭 사이가 void가 아닌데 돌려보내야 할 때
+                         // 사용하는 트릭
+                         // 반환의 값을 무조건 작성해야 하기 때문에 null 처리
+        }
+        LibraryMember.totalMemberCount++; // 회원수 증가
 
         return new LibraryMember(creatId, creatName, creatNumber, creatAge);
 
@@ -225,4 +247,29 @@ public class LibraryService {
         // borrowedBooks = result;
         // 00권 반납 완료. 남은 대출 도서 borrowedBooks
     }
+
+
+    /**
+     * 도서관 입장 기능
+     */
+    private void enterLibrary() {
+        System.out.println("입장할 고객의 정보를 작성하세요 : ");
+        String customerName = sc.next();
+        LibraryMember.currentVisitorCount++;
+        System.out.println(customerName+ "님이 도서관에 입장하셨습니다.");
+    }
+
+
+    /**
+     * 도서관 퇴장 기능
+     */
+    private void exitLibrary() {
+        System.out.println("퇴장할 고객의 정보를 작성하세요 : ");
+        String customerName = sc.next();
+        LibraryMember.currentVisitorCount--;
+        System.out.println(customerName+ "님이 도서관에 퇴장하셨습니다.");
+
+    }
+
+
 }
