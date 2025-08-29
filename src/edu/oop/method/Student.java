@@ -10,7 +10,7 @@ public class Student {
     public static String schoolName = "더조은대학교";
 
     public static final int MIN_VALUE = 0; // 스킬 역량 최소
-    public static final int MAX_VALUE = 0; // 스킬 역량 최대
+    public static final int MAX_VALUE = 100; // 스킬 역량 최대
 
     private String name; // 이름
     private String studentNumber; // 학번
