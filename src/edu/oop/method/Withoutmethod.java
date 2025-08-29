@@ -1,4 +1,4 @@
-package edu.oop.method.ex;
+package edu.oop.method;
 
 public class Withoutmethod {
     static String url = "https://www.google.com";
