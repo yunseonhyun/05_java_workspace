@@ -10,7 +10,8 @@ public class StudentService {
     private Scanner sc = new Scanner(System.in);
 
     /**
-     * 메인 메뉴를 제공하는 화면
+     * 메인 메뉴를 제공하는 화면 = html 대신 활용하고 있는 상황
+     * displayMenu 를 html 화면으로 데이터를 보낸다고 생각하기 !!!
      */
     public void displayMenu() {
         int input; // Scanner로 입력받은 메뉴 번호를 저장할 변수 기본값 = 0;
@@ -49,17 +50,66 @@ public class StudentService {
                     if (selected == 1) {
                         System.out.println("이미 학생이 등록되어 있는 번호입니다.");
                     } else {
+                        System.out.println("조회되는 학생의 정보가 존재하지 않습니다.");
                         System.out.println("학생 등록을 시작하겠습니다.");
                         // 학생 등록을 위한 메서드 호출
+                        std2 = createStudent();
                     }
-                case 0:
-                    System.out.println("프로그램을 종료합니다");
+                    break;
+                case 2:
+                    System.out.println("학생 정보를 확인합니다.");
+                    System.out.println("학생 정보를 확인할 번호를 선택하세요.");
+                    System.out.print("1=std1 / 2=std2 : ");
+                    selected = sc.nextInt();
+                    if (selected == 1) {
+                        // 하나의 기능으로 작성하고 기능을 재사용 하는 방식으로 변경
+                        System.out.println(studentInform(std1));
+                        /*System.out.println("학생이름 " + std1.getName());
+                        System.out.println("학생학번 " + std1.getStudentNumber());
+                        System.out.println("학생성별 " + std1.getGender());*/
+                    } else {
+                        // html 화면 대신 System.out.print 출력 화면으로 데이터가 무사히 나오고 있는지 확인
+                        System.out.println(studentInform(std2));
+                        /*System.out.println("학생이름 " + std2.getName());
+                        System.out.println("학생학번 " + std2.getStudentNumber());
+                        System.out.println("학생성별 " + std2.getGender());
+                    */}
+                    break;
+                case 0: System.out.println("프로그램을 종료합니다");
                     return;
-                default:
-                    System.out.println("잘못된 번호를 선택하셨습니다.");
+                default: System.out.println("잘못된 번호를 선택하셨습니다.");
             }
         }
 
 
+    }
+
+
+    private Student createStudent() {
+        System.out.print("이름 : ");
+
+        System.out.print("학번 : ");
+        System.out.print("성별(남/여) : ");
+        // sc.next().chatAt(0); sc.next()로 입력 받은 문자열 중에서
+        // 0번째 인덱스 번째 문자 하나를 반환받아 createGender 변수에 저장
+        return new Student(createrName, createNumber, createGender);
+    }
+
+
+    /**
+     * 매개 변수로 전달 받은 학생의 정보를 문자열로 만들어서 반환
+     * @param 특정학생 : std1 또는 std2 변수명칭의 데이터가 들어올 자리    param = 파라미터 줄임말 = 매개변수
+     * @return 학생 정보가 작성된 문자열 // html 연결 후에는 ㅇㅇㅇ 주소로 이동시켜서 데이터 전달하겠다와 같은 역할
+     */
+    // private void studentInform(Student 특정학생) {
+    private String studentInform(Student 특정학생) {
+        // String.format("패턴", 변수)
+        // - 패턴 모양의 문자열을 반환하는 String 메서드
+
+        // Student 클래스 모형으로 담겨져 있는 학생의 데이터가 존재하면 존재하는 값이 출력
+        // 존재하지 않으면 null이나 숫자의 경우 0의 형태로 출력
+        String a = String.format("%s / %s / %c",
+                특정학생.getName(), 특정학생.getStudentNumber(), 특정학생.getGender());
+        return a;
     }
 }
