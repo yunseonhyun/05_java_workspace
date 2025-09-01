@@ -25,7 +25,7 @@ public class Gmail extends GoogleService{
 
     // 매개변수 생성자 GoogleService 필드 + Gmail 필드 모두 사용하는 생성자
     public Gmail(String userEmail, String userName, String accountType, int inboxCount, int storageUsed) {
-        super("Gmail", serviceName, userEmail, userName, accountType);
+        super("Gmail", userEmail, userName, accountType);
         this.inboxCount = inboxCount;
         this.storageUsed = storageUsed;
     }
