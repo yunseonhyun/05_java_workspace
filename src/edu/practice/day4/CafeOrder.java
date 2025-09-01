@@ -75,17 +75,16 @@ public class CafeOrder {
 
     public void printReceipt() {
         System.out.println("주문번호 : " + getOrderNumber());
-        totalOrders = getOrderNumber();
+        totalOrders = totalOrders + getOrderNumber();
         System.out.println("고객명 : " + getCustomerName());
         System.out.println("메뉴 : " + getMenuItem());
         System.out.println("금액 : " + getPrice() + "원");
+        totalSales = totalSales + (getPrice() + (int)(getPrice() * TAX_RATE));
         System.out.println("세금 : " + (int)(getPrice() * TAX_RATE) + "원");
         System.out.println("총액 : " + (getPrice() + (int)(getPrice() * TAX_RATE)) + "원");
     }
 
     public void placeOrder() {
-        totalOrders =  getOrderNumber();
-        totalSales = (getPrice() + (int)(getPrice() * TAX_RATE));
         System.out.println("현재 총 주문수 : " +  totalOrders);
         System.out.println("현재 총 매출 : " +  totalSales + "원");
     }

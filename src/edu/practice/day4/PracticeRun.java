@@ -19,6 +19,9 @@ public class PracticeRun {
         // 문제 3번
         CafeOrder co = new CafeOrder("김자바", "아메리카노", 4000, 1);
         co.printReceipt();
+        co.printReceipt();
+        co.printReceipt();
+        co.printReceipt();
         co.placeOrder();
     }
 }
