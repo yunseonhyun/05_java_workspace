@@ -49,13 +49,13 @@ public class Dog extends Animal {
     // Animall 클래스에 작성된 기능을 재사용 하여 Dog 클래스에서 필요한 기능으로 재탄생
     @Override
     public void makeSound() {
-
+        System.out.println(getName() + "이(가) 멍멍 짖습니다.");
 
     }
 
     @Override
     public void move(){
-
+        System.out.println(getName() + "이(가) 다닙니다.");
     }
 
 
@@ -66,6 +66,12 @@ public class Dog extends Animal {
 
     public void fetch() {
         System.out.println(getName() + "이(가) 공을 물어옵니다.!");
+    }
+
+    @Override
+    public void showInfo() {
+        super.showInfo();
+        System.out.println("품종 : " + getBreed());
     }
 
 }

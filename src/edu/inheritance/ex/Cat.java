@@ -29,6 +29,13 @@ public class Cat extends Animal {
             super();
         }
 
+        public boolean isIndoor() {
+            return isIndoor;
+        }
+
+        public void setIndoor(boolean indoor) {
+            isIndoor = indoor;
+        }
 
         // 매개변수가 4개 존재하는 생성자 (Animal 3개 + Cat 1개)
         public Cat(String name, int age, String color, boolean isIndoor) {
@@ -57,6 +64,12 @@ public class Cat extends Animal {
         public void scratch() {
             System.out.println(getName() + "이(가) 발톱으로  긁습니다.");
 
+        }
+
+        public void showInfo() {
+            super.showInfo();
+            System.out.println("실내묘 : " + isIndoor()); // 앞에 is가 붙으면 get 생략
+            // is get 둘다 동사이기 때문에 is를 사용
         }
 
     }

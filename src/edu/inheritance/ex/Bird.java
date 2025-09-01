@@ -4,6 +4,9 @@ public class Bird extends Animal {
     // 필드, 속성 인스턴스 변수
     private double wingspan;
 
+    public Bird(String name, int age, String color) {
+        super();
+    }
     // 매개변수 생성자 Animal 3개, Bird 1개
     public Bird(String name, int age, String color, double wingspan) {
         super(name, age, color);
@@ -37,6 +40,12 @@ public class Bird extends Animal {
 
     public void buildNest() {
         System.out.println(getName() + "이(가) 둥지를 만듭니다.");
+    }
+
+    @Override
+    public void showInfo() {
+        super.showInfo();
+        System.out.println("날개 길이 : " + getWingspan());
     }
 
 }
