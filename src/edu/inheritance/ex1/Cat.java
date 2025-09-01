@@ -1,4 +1,4 @@
-package edu.inheritance.ex;
+package edu.inheritance.ex1;
 /*
 public class Cat extends Animal {   // 이줄에 빨간줄이 생기는 이유
 

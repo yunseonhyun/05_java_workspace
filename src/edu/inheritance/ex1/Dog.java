@@ -1,4 +1,4 @@
-package edu.inheritance.ex;
+package edu.inheritance.ex1;
 
 // 강아지 클래스
 public class Dog extends Animal {
