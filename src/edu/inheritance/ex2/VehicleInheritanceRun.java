@@ -1,5 +1,7 @@
 package edu.inheritance.ex2;
 
+import edu.inheritance.ex3.GoogleService;
+
 /**
  * 교통수단 클래스 상속 실습 문제
  *
@@ -44,16 +46,46 @@ public class VehicleInheritanceRun {
         Bicycle b2 = new Bicycle("자이언트", "이스케이프", 2023, "빨간색", 21, true);
 
 
+        // 다형성을 활용해서 한번에 출력
+        // 변수이름 : vehicles 배열형태
+        // 배열 내 출력 for문 내 변수이름 : info
+        Vehicle[] vehicles = {b1, b2};
+        for(Vehicle info :vehicles){
+            System.out.println("=== 교통수단 정보 ===");
+            info.showInfo();
+            System.out.println("\n=== 시동 걸기 ===");
+            info.start();
+            System.out.println("\n=== 정지하기 ===");
+            info.stop();
+
+        }
+
 
         // ============== 문제 4: 교통수단 정보 출력 ==============
         // 모든 교통수단의 기본 정보를 showInfo() 메소드로 출력하세요.
 
-        System.out.println("=== 교통수단 정보 ===");
+        //System.out.println("=== 교통수단 정보 ===");
         // 여기에 코드 작성
-        car1.showInfo();
-        m1.showInfo();
-        b1.showInfo();
-        b2.showInfo();
+        //car1.showInfo();
+        //m1.showInfo();
+        //b1.showInfo();
+        //b2.showInfo();
+
+
+        // ============== 문제 5: 공통 행동 테스트 ==============
+        // 모든 교통수단이 시동을 걸고 정지하는 행동을 해보세요. (start, stop 메소드)
+
+        //System.out.println("\n=== 시동 걸기 ===");
+        //car1.start();
+        //m1.start();
+        //b1.start();
+        //b2.start();
+
+       // System.out.println("\n=== 정지하기 ===");
+        //car1.stop();
+        //m1.stop();
+        //b1.stop();
+       // b2.stop();
 
 
         // ============== 문제 5: 공통 행동 테스트 ==============

@@ -21,9 +21,15 @@ public class PolyService {
     int 인트변수 = (int)100L; // int의 공간은 숫자이므로 숫자를 int로 강제 형변환 해서 가능
     // 가능한 이유는 둘다 숫자임을 자바에서 알고 있기 때문에 가능
 
+
+    //"C:\Program Files\Java\jdk-21\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2025.2\lib\idea_rt.jar=65127" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\tj\Desktop\java-workspace\java_basic\out\production\java_basic edu.polymorphism.pack1.run.PolyRun
+    //Exception in thread "main" java.lang.ClassCastException: class edu.polymorphism.pack1.model.SmartPhone cannot be cast to class edu.polymorphism.pack1.model.Iphone (edu.polymorphism.pack1.model.SmartPhone and edu.polymorphism.pack1.model.Iphone are in unnamed module of loader 'app')
+    //	at edu.polymorphism.pack1.service.PolyService.<init>(PolyService.java:26)
+    //	at edu.polymorphism.pack1.run.PolyRun.main(PolyRun.java:7)
+
     // SmartPhone과 Iphone   Galaxy는 자바가 아는 형태가 아니라 개발자가 만들어놓은 형태이기 때문에 형변환 어려움
     //   ? 상자     ? 상자   ? 상자
-    Iphone iphone3 = (Iphone) new SmartPhone(); // 마찬가지로 형변환 해서 사용하면 가능하다 데이터가 변경되며 손실이 일어날 수 있음
+    Iphone iphone3 = new Iphone(); // 마찬가지로 형변환 해서 사용하면 가능하다 데이터가 변경되며 손실이 일어날 수 있음
     // 현재 코드에서는 문제가 일어나지 않지만 코드 실행하면 ClassCastException 클래스가 일치하지 않습니다.
     // 하며 데이터 변환시 데이터가 손실되어 문제가 발생
     // SmartPhone을 상속받는 Galaxy와 같은 데이터가 잘못 들어올 수 있기 때문에
@@ -51,7 +57,7 @@ public class PolyService {
         SmartPhone 스마트폰2대 = new SmartPhone();
         SmartPhone 스마트폰3대 = new SmartPhone();
 
-        SmartPhone[] 스마트폰공장 = new  SmartPhone[4];
+        SmartPhone[] 스마트폰공장 = new  SmartPhone[3];
         // 스마트폰 4대에 대한 정보를 sps라는 공간에 한 번에 넣어줄 수 있다.
         스마트폰공장[0] = 스마트폰1대; // 각각의 스마트폰 공장에 스마트폰 1대에 대한 정보를 저장
         스마트폰공장[1] = 스마트폰2대;
@@ -60,6 +66,7 @@ public class PolyService {
         스마트폰공장[0].setDisplay("아이폰 14 디스플레이"); // 와 같은 형식으로 작성
         스마트폰공장[1].setDisplay("갤럭시 S23 디스플레이"); // 와 같은 형식으로 작성
         스마트폰공장[2].setDisplay("파이폰 디스플레이"); // 와 같은 형식으로 작성
+
 
         // 스마트폰 공장 내에 존재하는 스마트폰들의 정보를 for문을 활용해서 모두 출력
         for(SmartPhone        기기확인    :스마트폰공장) {
