@@ -1,4 +1,4 @@
-package edu.polymorphism.pack1;
+package edu.polymorphism.pack1.model;
 
 /*
 Object 클래스
@@ -56,6 +56,18 @@ public class SmartPhone /* extends Object*/{
 
     public String getAp() {
         return ap;
+    }
+
+    public void setDisplay(String display) {
+        this.display = display;
+    }
+
+    public void setNewsAgency(String newsAgency) {
+        this.newsAgency = newsAgency;
+    }
+
+    public void setAp(String ap) {
+        this.ap = ap;
     }
 
     // 우리가 showInfo와 같은 출력문을 하나씩 작성하지 않아도 알아서 변수이름들의 대한 데이터 정보를 출력할 수 있도록
