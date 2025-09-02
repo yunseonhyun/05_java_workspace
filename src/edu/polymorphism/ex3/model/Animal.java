@@ -80,40 +80,9 @@ public class Animal {
 
     public void move(){};
 
+    public void eat(){}
+
+    public void doSpecialAction(){}
 
 
-/*
-    public static void main(String[] args) {
-        AnimalBad dog = new AnimalBad("멍멍이", 3, "갈색", "개");
-        AnimalBad cat = new AnimalBad("야옹이", 2, "흰색", "고양이");
-        AnimalBad bird = new AnimalBad("짹짹이", 1, "노란색", "새");
-
-        System.out.println("=== 동물들의 행동 ===");
-
-        // 개
-        dog.makeSound();
-        dog.move();
-        dog.setTrained(true);
-        dog.doSpecialAction();
-        dog.eat();
-        System.out.println(dog.toString());
-
-        System.out.println();
-
-        // 고양이
-        cat.makeSound();
-        cat.move();
-        cat.doSpecialAction();
-        cat.eat();
-        System.out.println(cat.toString());
-
-        System.out.println();
-
-        // 새
-        bird.makeSound();
-        bird.move();
-        bird.doSpecialAction();
-        bird.eat();
-        System.out.println(bird.toString());
-    }*/
 }

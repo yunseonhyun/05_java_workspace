@@ -43,10 +43,9 @@ public class Cat extends Animal {
 
     @Override
     public String toString() {
-        return super.toString() + "Cat{" +
+        return super.toString() +
                 "livesLeft=" + livesLeft +
-                ", isIndoor=" + isIndoor +
-                '}';
+                ", isIndoor=" + isIndoor;
     }
 
     // 기능들

@@ -44,10 +44,9 @@ public class Bird extends Animal {
     // toString
     @Override
     public String toString() {
-        return super.toString() + "Bird{" +
+        return super.toString() +
                 "wingSpan=" + wingSpan +
-                ", canFly=" + canFly +
-                '}';
+                ", canFly=" + canFly;
     }
 
     // 기능들
@@ -56,7 +55,7 @@ public class Bird extends Animal {
     }
 
     public void move() {
-        if (canFly) {
+        if (isCanFly()) {
             System.out.println(getName() + "이(가) 날개를 펴고 날아갑니다!");
         } else {
             System.out.println(getName() + "이(가) 뛰어갑니다.");
@@ -65,7 +64,7 @@ public class Bird extends Animal {
 
     public void doSpecialAction() {
         System.out.println(getName() + "이(가) 깃털을 다듬습니다.");
-        System.out.println("날개 길이: " + wingSpan + "cm");
+        System.out.println("날개 길이: " + getWingSpan() + "cm");
     }
 
     public void eat() {

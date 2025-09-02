@@ -47,8 +47,7 @@ public class Dog extends Animal {
     public String toString() {
         return super.toString() +
                 "breed='" + breed + '\'' +
-                ", isTrained=" + isTrained +
-                '}';
+                ", isTrained=" + isTrained ;
     }
 
 
