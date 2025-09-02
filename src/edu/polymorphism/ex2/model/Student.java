@@ -54,7 +54,7 @@ public class Student extends UniverseMember {
 
     @Override
     public String toString() {
-        return "studentMajor='" + studentMajor + '\'' +
+        return super.toString() + studentMajor + '\'' +
                 ", studentGrade=" + studentGrade +
                 ", studentGpa=" + studentGpa;
     }
