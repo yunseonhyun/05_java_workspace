@@ -25,8 +25,24 @@ public class AnimalInheritanceRun {
         // 여기에 코드 작성
         Bird bird1 = new Bird("짹짹이", 1, "노란색");
         Bird bird2 = new Bird("짹짹이", 2, "파란색", 25.5);
+        //                   0  ,  1  ,   2  ,   3
+        Animal[] animals = {dog1, cat1, bird1, bird2};
+        // Animal 클래스 내부에 작성된 필드, 기능만 호출 출력 가능
+        for(Animal animal : animals) {
+            animal.showInfo();
+            // 예를 들어 animals에서 animal 내 0번째인 dog1 내부에 작성된 데이터가
+            // 전달되면 animal에는 dog1에 작성된 데이터를 기반으로 출력
+            // 출력될 때는 Animal에 작성된 기능을 재사용하여 dog1에 맞게 수정된 기능내용이 출력
+            // 하지만 animal에는 존재하지 않고, dog1에만 존재하는 기능은 출력할 수 없음
+            // 왜냐하면 animal 틀 이외의 기능이기 때문!
+            animal.eat();
+            animal.sleep();
+            animal.makeSound();
+            animal.move();
 
+        }
 
+  /*
         System.out.println("=== 동물원 친구들 소개 ===");
         dog1.showInfo();
         cat1.showInfo();
@@ -59,7 +75,7 @@ public class AnimalInheritanceRun {
         cat1.move();
         bird1.move();
         bird2.move();
-
+*/
 
         System.out.println("\n=== 동물별 특별한 행동 ===");
         dog1.wagTail();

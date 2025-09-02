@@ -21,7 +21,7 @@ public class Electronic extends Product {
     }
 
     public Electronic(String productName, String productId, double productPrice, int productStock, String productDescription, String productBrand, double productWeight, int warranty, String powerConsumption) {
-        super(productName, productId, productPrice, productStock, productDescription, productBrand, productWeight);
+        super(productName, productId, productPrice, productStock,productDescription, productBrand, productWeight);
         this.warranty = warranty;
         this.powerConsumption = powerConsumption;
     }
