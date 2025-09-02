@@ -1,4 +1,4 @@
-package edu.polymorphism.ex1;
+/*package edu.polymorphism.ex1.model;
 
 // 모든 것을 하나의 클래스에 넣은 나쁜 예시
 public class 더조은회사AllInOne extends Product{
@@ -107,3 +107,4 @@ public class 더조은회사AllInOne extends Product{
 
 
 }
+*/
