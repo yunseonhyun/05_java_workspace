@@ -5,7 +5,7 @@ package edu.polymorphism.pack2.ex1;
 필수로 Member 클래스를 상속받는 자식 클래스는 각 회원 타입에서 할인율을 다르게 구현
 로그인 로그아웃은 자식 클래스에서 굳이 추가적으로 구현하지 않아도 됨
  */
-public class Member {
+public abstract class Member {
     // 필드 인스턴스변수 속성
     protected String memberId;
     protected String memberName;
@@ -59,4 +59,15 @@ public class Member {
     // 필수로 자식클래스에서 작성해야한다는 표기가 존재하지 않는데
     // 저(abstract)를 쓴다합니다.
     public abstract double 할인율();
+
+    public abstract void 쿠폰과혜택();
+    // 일반Member = 보유하고 있는 쿠폰과 혜택이 존재하지 않습니다.
+    // 구독 서비스에 따라 쿠폰과 혜택을 받으실 수 있습니다.
+
+    // 프리미엄Member = 현재 000 쿠폰을 보유하고 있습니다.
+    // 아쉽게도 혜택은 존재하지 않습니다.
+    // VIP로 구독 업그레이드 하기
+
+    // VIPMember = 현재 000 쿠폰과 000 혜택 이용 가능합니다.
+    // 를 MemberService에서 회원.쿠폰과혜택()으로 확인하기
 }

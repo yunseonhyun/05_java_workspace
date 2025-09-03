@@ -4,8 +4,8 @@ package edu.practice.day7.model;
  * BadKakaoService - 상속, 추상화, 다형성을 사용하지 않은 나쁜 설계 예시
  * 모든 카카오 서비스를 하나의 클래스에 구현 (안티패턴)
  */
+/*
 public class BadKakaoService {
-
 
 
 
@@ -302,3 +302,5 @@ public class BadKakaoService {
         System.out.println("7. 인터페이스를 통한 계약 정의 불가능");
     }
 }
+
+ */
