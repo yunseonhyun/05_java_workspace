@@ -16,7 +16,8 @@ public abstract class 파일이름 {
 
 }
 
-
+That's too abstract for me to understand. - 너무 추상적이어서 이해하기 어려워
+특정 구현기술이 없어 모호한 기능을 나타내는 단어 {} 하나가 존재하지 않다는 이유로!
 
  */
 public abstract class 추상화 {
