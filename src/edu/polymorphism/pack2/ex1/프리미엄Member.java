@@ -38,7 +38,7 @@ public class 프리미엄Member extends Member {
 
     @Override
     public void 쿠폰과혜택() {
-        System.out.println("프리미엄Member = 현재 000 쿠폰을 보유하고 있습니다.\n" +
+        System.out.println("현재" + get쿠폰() + " 쿠폰을 보유하고 있습니다.\n" +
                 "아쉽게도 혜택은 존재하지 않습니다.\n" +
                 "VIP로 구독 업그레이드 하기");
     }
