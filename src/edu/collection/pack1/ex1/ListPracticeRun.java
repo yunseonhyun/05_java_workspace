@@ -8,11 +8,12 @@ public class ListPracticeRun {
     // 메인메서드에서 모든 동작을 진행할 예정
     // 왜냐하면 List - ArrayList를 단순히 익히기 위한 실습이기 때문에 한 번에 작성
     public static void main(String[] args) {
-        problem1(); // function javascript처럼 실행 가능
-        problem2(); // function javascript처럼 실행 가능
-        problem3(); // function javascript처럼 실행 가능
-        problem4(); // function javascript처럼 실행 가능
-        problem5(); // function javascript처럼 실행 가능
+        // problem1(); // function javascript처럼 실행 가능
+        // problem2(); // function javascript처럼 실행 가능
+        // problem3(); // function javascript처럼 실행 가능
+        // problem4(); // function javascript처럼 실행 가능
+        // problem5(); // function javascript처럼 실행 가능
+        problem6();
     }
     // void 앞에 static이 붙는다는 것은.. 변수이름에 의하여 호출되지 않고
     // 기능들 단독적으로 호출할 수 있도록 사용한다는 의미
@@ -128,6 +129,28 @@ public class ListPracticeRun {
             }
         }
         System.out.println(max);
+    }
+
+    public static void problem6(){
+        List<String> list6 = new ArrayList<>();
+        list6.add("게임");
+        list6.add("요리");
+        list6.add("독서");
+        list6.add("요리");
+        list6.add("요리");
+        System.out.println(list6);
+
+        System.out.println("요리가 몇 번째로 들어있나? : " + list6.indexOf("요리"));
+        // 요리가 몇 번째로 들어있나? : 1
+        // indexOf()는 중복된 데이터가 여러 개 있을 경우 맨 앞에 있는 index 번호만 출력
+
+        // 요리가 들은 모든 index를 보고싶어요
+        for(int i = 0; i < list6.size(); i++){
+            if(list6.get(i).equals("요리")){// equals는 문자열 비교하는 기능
+                // equals는 비교했을 때 동일하면 true 다르면 false
+                System.out.println(i + "번째 위치");
+            }
+        }
     }
 
 
