@@ -1,6 +1,6 @@
-package edu.collection.pack1.ex1.run;
+package edu.collection.pack1.run;
 
-import edu.collection.pack1.ex1.service.ListService;
+import edu.collection.pack1.service.ListService;
 
 public class ListRun {
     public static void main(String[] args) {

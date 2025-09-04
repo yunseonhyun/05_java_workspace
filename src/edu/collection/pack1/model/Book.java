@@ -1,4 +1,4 @@
-package edu.collection.pack1.ex1.model;
+package edu.collection.pack1.model;
 // 클래스를 생성할 때 model.Book과 같은 형식으로 작성하면 model이라는 폴더와 Book 문서가 동시 생성
 public class Book {
     // 필드 속성 인스턴스 변수
