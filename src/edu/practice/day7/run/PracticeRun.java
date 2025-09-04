@@ -1,29 +1,25 @@
-package edu.practice.day7.run;
+package edu.practice.day7;
 
-import edu.practice.day7.model.KakaoMap;
-import edu.practice.day7.model.KakaoPay;
-import edu.practice.day7.model.KakaoService;
-import edu.practice.day7.model.KakaoTalk;
+import edu.practice.day7.model.*; //model 폴더 안에 존재하는 class 문서들 사용하기
 
 /**
  * Java 7일차 상속, 추상화, 다형성 실습문제 실행 클래스
  * 각 문제의 주석을 해제하고 실행하세요
  */
-/*
 public class PracticeRun {
     public static void main(String[] args) {
         System.out.println("=== Java 7일차 상속, 추상화, 다형성 실습문제 실행 ===");
 
         // 문제 1-4: 개별 클래스 테스트
         // testKakaoTalk();
-        // testKakaoPay();
-        // testKakaoMap();
+        //  testKakaoPay();
+        //  testKakaoMap();
 
         // 다형성 테스트
         // testPolymorphism();
 
         // 추상 클래스 테스트
-        // testAbstractClass();
+        testAbstractClass();
     }
 
     public static void testKakaoTalk() {
@@ -169,4 +165,3 @@ public class PracticeRun {
         }
     }
 }
-*/

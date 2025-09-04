@@ -22,7 +22,11 @@ public class AnimalService {
             animal.doSpecialAction();
             animal.eat();
             System.out.println(animal.toString());
+
         }
+
+
+
 /*
         // 개
         dog.makeSound();

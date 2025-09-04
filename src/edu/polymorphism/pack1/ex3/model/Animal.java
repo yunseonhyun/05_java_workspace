@@ -9,6 +9,7 @@ Animal (부모클래스)
 public class Animal {
 
     // 공통 필드
+
     private String name;
     private int age;
     private String color;

@@ -2,6 +2,7 @@ package edu.polymorphism.pack1.ex3.model;
 
 public class Bird extends Animal {
     // 새 전용 필드들
+
     private double wingSpan; // 날개 길이
     private boolean canFly;
 
@@ -71,5 +72,6 @@ public class Bird extends Animal {
         System.out.println(getName() + "이(가) 씨앗을 먹습니다.");
 
     }
+
 
 }
