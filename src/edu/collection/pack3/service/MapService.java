@@ -117,7 +117,7 @@ public class MapService {
         //
         // 향상된 for문은 항상 끝나기전 ) 소괄호 앞에 존재하는 명칭이 기준!!!!
         // 1. map1이 어디서 선언되었고, map2이라는 명칭의 공간이 생성되었는지 확인
-        // 2. Map<Integer, String> map2 = new HashMap<>(); 선언된 map2의 자룧ㅇ을 확인
+        // 2. Map<Integer, String> map2 = new HashMap<>(); 선언된 map2의 자료를 확인
         // 문자열 문자열이기 때문에
         //      ↓ 아래 들어가는 자료형 또한 Map<String, String>과 동일하게 작성해야함
         //      ↓ map2에 존재하는 데이터들을 하나씩 하나씩 꺼내서 확인할 것이기 때문
