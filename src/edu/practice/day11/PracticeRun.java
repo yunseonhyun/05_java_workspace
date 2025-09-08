@@ -6,6 +6,9 @@ public class PracticeRun {
         // manager.method1();
 
         BankAccountManager bam = new BankAccountManager();
-        bam.method2();
+        // bam.method2();
+
+        StoreInventoryManager s = new StoreInventoryManager();
+        s.method3();
     }
 }
