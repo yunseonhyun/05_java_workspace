@@ -58,4 +58,40 @@ Paths : Path 기능들을 활용해서 만든 문서 파일
             throw new RuntimeException(e);
         }
     }
+
+
+    // 현재 java_basic 폴더에서 files라는 폴더를 생성
+    // files라는 폴더 내부에 파일2.txt 만들고,
+    // 파일 내용 : 안녕하세요.
+    //             반갑습니다.
+    //             오늘점심은 어떻게 되나요
+    //
+    // String content = "안녕하세요. 반갑습니다. 오늘 점심은 어떻게 되나요."
+    // 를 활용해서 파일2.txt내부에 작성하기
+    // Files와 File만 활용
+    // Path 대신 File.getPath() 이용하거나 File 객체 이용
+    // path    filename     content fPath fFilename 이용
+
+    public void method2(){
+        String path = "files";
+        String filename = "/파일2.txt";
+        String content = "안녕하세요.\n반갑습니다.\n오늘 점심은 어떻게 되나요";
+        File fPath = new File(path);
+        File fFilename =  new File(filename);
+
+        if(!fPath.exists()){
+            fPath.mkdir();
+        }
+
+        try {
+            Files.writeString(Paths.get(fPath + "/" + fFilename), content);
+            System.out.println("파일 생성 및 컨텐츠 작성이 완료되었습니다.");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+
+    }
+
 }
