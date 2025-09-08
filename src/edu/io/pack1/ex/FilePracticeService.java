@@ -11,10 +11,9 @@ public class FilePracticeService {
 
     // 문제 1 : 상대 경로를 이용한 폴더 및 파일 생성
     public void method1(){
-        String directory1 = "/Users/tj/Desktop/java-workspace/java_basic";
-        String path = "/my_logs";
-        File 폴더 = new File(directory1 + path);
-        File file = new File(directory1 + path + "/access_log.log");
+        String path = "my_logs"; // 폴더 명칭 맨 앞에 /가 붙지 않으면 현재 작업하고 있는 위치를 기준이됨
+        File 폴더 = new File(path);
+        File file = new File(path + "/access_log.log");
         if(!폴더.exists()){
             폴더.mkdir();
             System.out.println(path + "폴더 생성 완료");
@@ -43,7 +42,11 @@ public class FilePracticeService {
 
     // 문제 2 : 기존 디렉토리 목록 조회 및 유형 판별
     public void method2(){
-        File file = new File("/Users/tj/Desktop/java-workspace/java_basic/src/edu/oop/method/ex");
+        /*
+        폴더 내 전체 경로 및 파일 확인 명령아 :
+        cmd 창에서 : tree /f 폴더별 파일들 모두 확인 가능
+         */
+        File file = new File("src/edu/oop/method/ex");
         File[] files = file.listFiles();
 
         for(File file1 : files){
