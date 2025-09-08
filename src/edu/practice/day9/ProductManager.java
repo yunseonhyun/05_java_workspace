@@ -5,9 +5,10 @@ import java.util.*;
 
 public class ProductManager {
     Map<String, String> productMap =  new HashMap<>();
-    Map<String, String> priceMap =  new HashMap<>();
-
+    Map<String, Integer> priceMap =  new HashMap<>();
     public void addProduct(String productId, String productName, int price) {
+
+
         if(productMap.containsKey(productId)){
             System.out.println("이미 존재하는 상품입니다");
         } else {
@@ -24,8 +25,14 @@ public class ProductManager {
     }
 
     public void displayAllProducts(){
+        productMap.put("P001", "갤럭시S24");
+        productMap.put("P002", "아이폰15");
+        productMap.put("P003", "나이키운동화");
+        priceMap.put("갤럭시S24", 1200000);
+        priceMap.put("아이폰15", 1200000);
+        priceMap.put("나이키운동화", 150000);
         System.out.println("===전체 상품 목록 ===");
-        for(Map.Entry<String, String> entry : priceMap.entrySet()){
+        for(Map.Entry<String, Integer> entry : priceMap.entrySet()){
             System.out.println("상품명 : " + entry.getKey()+ " 상품가격 : " + entry.getValue());
         }
     }

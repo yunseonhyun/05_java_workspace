@@ -168,8 +168,9 @@ public class PracticeException1 {
             String inputStr = sc.nextLine();
 
             // 강제로 null 설정
-            inputStr = null; // 대체
-
+            if(inputStr == "") {
+                inputStr = null; // 대체
+            }
             System.out.println("입력된 문자열 : " + inputStr);
             System.out.println("문자열의 길이 : " + inputStr.length());
         } catch(NullPointerException e){
@@ -201,15 +202,30 @@ public class PracticeException1 {
     public void method6() {
         Scanner sc = new Scanner(System.in);
         System.out.print("파일명을 입력하세요 (예: test.txt) : ");
-        String fileName = sc.nextLine();
-        // fileName.lastIndexOf(".")
-        int dotIndex = fileName.lastIndexOf('.');
-        String extension = fileName.substring(dotIndex + 1);
+        try {
+            String fileName = sc.nextLine();
+            // fileName.lastIndexOf(".")
+            int dotIndex = fileName.lastIndexOf('.');
+            System.out.println("doIndex 번호 확인 : " + dotIndex);
+            // . 없거나, 마지막 문자가 . 인 경우 예외 발생
+            if(dotIndex == -1) {
+                throw new StringIndexOutOfBoundsException("확장자가 존재하지 않습니다.");
+            }
 
-        // 점이 없으면 dotIndex가 -1이므로 charAt(0)에서 빈 문자열 발생해서 예외 유도
-        extension.charAt(0);
-        System.out.println("파일명 : " + fileName);
-        System.out.println("확장자 : " + extension);
+            String extension = fileName.substring(dotIndex + 1);
+
+            // 점이 없으면 dotIndex가 -1이므로 charAt(0)에서 빈 문자열 발생해서 예외 유도
+            extension.charAt(0);
+            System.out.println("파일명 : " + fileName);
+            System.out.println("확장자 : " + extension);
+        } catch (StringIndexOutOfBoundsException e) {
+            System.out.println("올바른 파일명이 아닙니다. 확장자가 포함된 파일명을 입력하세요.");
+        } catch (Exception e) {
+            System.out.println("개발자가 예기치 못한 문제가 발생했습니다.");
+            System.out.println("회사에 문제 보고서 전달하기 YES/NO");
+        } finally {
+            System.out.println("파일명 처리를 완료했습니다.");
+        }
     }
 
 

@@ -1,10 +1,19 @@
 package edu.practice.day9;
 
 import java.util.*;
-/*
+
 public class MemberPointManager {
     Map<String, Integer> pointMap = new HashMap<String, Integer>();
-    pointMap.put();
+
+
+    public MemberPointManager() {
+        pointMap =new HashMap<>();
+        pointMap.put("user01", 1000);
+        pointMap.put("user02", 1500);
+        pointMap.put("user03", 500);
+
+    }
+
     public void registerMember(String memberId){
         if(pointMap.containsKey(memberId)){
             System.out.println("이미 존재하는 ID입니다.");
@@ -35,9 +44,10 @@ public class MemberPointManager {
     }
 
     public void displayAllMembers(){
+
         System.out.println("=== 전체 회원 포인트 정보");
         for(Map.Entry<String, Integer> entry : pointMap.entrySet()){
             System.out.printf("%-10s : %s \n", entry.getKey(), entry.getValue());
         }
     }
-}*/
+}
