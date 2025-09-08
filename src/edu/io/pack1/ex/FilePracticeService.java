@@ -7,7 +7,7 @@ public class FilePracticeService {
     //제공된 FileService.java의 개념(File 객체 생성,
     // mkdirs(), createNewFile(), exists(), listFiles() 등)을
     // 활용하여 다음 문제들을 해결해 보세요.
-    String directory = "/io_test/temp";
+
 
     // 문제 1 : 상대 경로를 이용한 폴더 및 파일 생성
     public void method1(){
@@ -62,6 +62,7 @@ public class FilePracticeService {
 
     // 문제 3 : 파일 생성 확인 및 삭제 처리
     public void method3(){
+        String directory = "/io_test/temp";
         File file = new File(directory);
         File file1 = new File(directory + "/delete_target.txt");
         if(!file.exists()){
