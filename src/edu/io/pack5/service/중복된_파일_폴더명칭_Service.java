@@ -95,7 +95,7 @@ public class 중복된_파일_폴더명칭_Service {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        ;
+
     }
 
     /*
