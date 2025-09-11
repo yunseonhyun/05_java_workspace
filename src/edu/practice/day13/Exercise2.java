@@ -20,6 +20,8 @@ public class Exercise2 {
             System.out.println("학생 정보 파일이 생성되었습니다.");
             System.out.println("=== 파일 내용 ===");
             String read = Files.readString(filePath);
+            // readString은 읽는 용도가 맞으나, 컴퓨터가 읽은 것이지
+            // 컴퓨터가 읽은 내용을 클라이언트 눈에 보여줄 의무는 없음
             System.out.println(read);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -35,10 +37,13 @@ public class Exercise2 {
             Files.createDirectories(textDir.getParent());
             URL url = new URL(textUrl);
             InputStream is = url.openStream();
-            Files.copy(is, textDir);
+            if(!Files.exists(textDir)){
+                Files.copy(is, textDir);
+
             System.out.println("텍스트 다운로드 완료 : " + textDir);
             String content = Files.readString(textDir);
             System.out.println("다운로드된 내용 : " + content);
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -47,20 +52,25 @@ public class Exercise2 {
     public void solution3(){
         Path backupDir = Path.of("backup");
         String fileName = "document.txt";
-        Path filePath = Path.of(backupDir + fileName);
+        Path filePath = backupDir.resolve(fileName);
         String baseName = "document";
         String extension = ".txt";
         String content = "이것은 백업 문서입니다.";
         int counter = 1;
+        // Path textDir = backupDir.resolve(baseName + extension);
+        // 기존 경로 + 파일명칭 이어 작성할 때 주로 사용
+        // 경로를 설정할 때 처음부터 Path.of 로 완벽한 경로를 설정한 후 경로 내에 파이 ㄹ명칭이 들어갈 수 있도록
+        // 설정
 
 
 
             while(Files.exists(filePath)){
 
                 String newName = baseName + "_" + counter + extension;
-                counter++;
 
                 filePath = backupDir.resolve(newName);
+                counter++;
+
 
 
             }
@@ -110,20 +120,21 @@ public class Exercise2 {
         long timestamp = System.currentTimeMillis();
         String fileName = "log_" + timestamp + ".txt";
         int logCount = 0;
-        String input = "";
+        String input;
 
         try {
             Files.createDirectories(logsDir);
             System.out.println("=== 로그 생성기 시작 ===");
             System.out.println("로그 메시지를 입력하세요 ('종료'를 입력하면 저장됩니다.)");
-            while(input.contains("종료")){
+            input = sc.nextLine();
+            while(!input.equals("종료")){
                 input = sc.nextLine();
 
             }
+            System.out.println("로그 파일이 저장되었습니다 : " + fileName);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public void solution6(){}
 }

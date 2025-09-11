@@ -44,10 +44,6 @@ public class ExerciseRun {
                     System.out.println("\n--- 문제 5 실행 ---");
                     ex2.solution5();
                     break;
-                case 6:
-                    System.out.println("\n--- 문제 6 실행 ---");
-                    ex2.solution6();
-                    break;
                 case 7:
                     System.out.println("\n--- 모든 문제 실행 ---");
                     ex2.solution1();
@@ -59,8 +55,6 @@ public class ExerciseRun {
                     ex2.solution4();
                     System.out.println();
                     ex2.solution5();
-                    System.out.println();
-                    ex2.solution6();
                     break;
                 case 0:
                     System.out.println("프로그램을 종료합니다.");
