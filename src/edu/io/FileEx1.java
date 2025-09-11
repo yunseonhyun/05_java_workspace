@@ -7,6 +7,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
+import java.nio.file.StandardOpenOption;
 
 public class FileEx1 {
 
@@ -120,4 +122,73 @@ public class FileEx1 {
         // file에는 폴더1/폴더2/파일이름.txt로 결합해서 사용하는 기능
 
     }
+
+    /************************************************
+     * StandardOpenOption      StandardCopyOption
+     * 주로 StandardOpenOption 정도만 사용 ... (CREARE, APPEND)
+     ************************************************/
+    Path path = Path.of("폴더1/폴더2/파일이름.확장자이름");
+
+    public void StandardOpenOptionMethod() throws IOException {
+        // 가장 많이 사용하는 형식 파일없으면 생성 있으면 내용 이어서 작성하기
+        Files.writeString(path, "로그내용\n", StandardOpenOption.CREATE,StandardOpenOption.APPEND);
+        // 파일 무조건 새로 생성 이어서 작성되지 않음
+        Files.writeString(path, "로그내용\n", StandardOpenOption.CREATE);
+        // 파일 무조건 이어서 작성만 가능 파일이 존재하지 않을 경우 에러 발생
+        Files.writeString(path, "로그내용\n", StandardOpenOption.APPEND);
+
+        // 새 파일만 생성 (기존 파일 존재하면 오류) 기존파일 건들지 않고 새로 만들기만 진행할 때 사용
+        Files.writeString(path, "로그내용\n", StandardOpenOption.CREATE_NEW);
+
+        // 임시 파일의 경우 파일을 작성하면서 프로그램이 종료되거나, 파일을 닫음과 동시에 바로 삭제
+        Files.writeString(path, "로그내용\n", StandardOpenOption.CREATE, StandardOpenOption.DELETE_ON_CLOSE);
+
+
+        // 대상 파일이 이미 존재해도 덮어쓰기
+        Files.copy(path, path, StandardCopyOption.REPLACE_EXISTING);
+        Files.move(path, path, StandardCopyOption.REPLACE_EXISTING);
+
+        // 파일의 속성(생성일, 수정일)도 함께 복사
+        Files.copy(path, path, StandardCopyOption.COPY_ATTRIBUTES);
+
+        // 파일을 복제할 때 제일 많이 사용하는 방법
+        Files.copy(path, path, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.COPY_ATTRIBUTES);
+
+        // 파일 이동을 원칙적으로 수행 (파일을 이동하던 도중 이동 실패하면 원상복구)
+        // ATOMIC_MOVE의 경우 C드라이브에서 C드라이브 내에 존재하는 것만 보존
+        //                    C드라이브에서 D드라이브로 이동하는 것은 원상복구 불가능
+        //                    한국에서 서울 -> 부산으로 이동하다가 문제 생기는 것은 복구가 가능하지만
+        //                    한국에서 중국이나 일본으로 이동하다 문제 생기면 복구 불가
+        Files.move(path, path, StandardCopyOption.ATOMIC_MOVE);
+
+        // 안전하게 파일을 이동하는 방법 파일이동하다 실패하면 기존 파일 그대로 위치 유지
+        Files.move(path, path, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.ATOMIC_MOVE);
+    }
+
+    /*
+    Files.writeString(파일경로.파일명칭.확장자이름, 파일내용문);
+    파일에 문자열을 작성하는 기능
+     */
+    public void writeStringMethod() throws IOException {
+        // 1. 가장 간단한 방법(파일이 없으면 생성, 있으면 덮어쓰기)
+        Files.writeString(path, "안녕하세요");
+
+        // 2. 옵션과 함께 사용 반드시 이어서 작성할 때는 CREATE, APPEND를 함께 사용
+        // 만약에 CREATE 없이 APPEND만 사용했는데, 파일이 없을 경우 -> 파일없음 예외 상황 발생
+        // CREATE만 사용할 경우 -> 계속 새로 만들며, 문자가 이어서 작성되지 않음 흡사 덮어쓰기형태
+        Files.writeString(path, "내용", StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+    }
+
+    /*
+    Files.readString(읽어올 파일경로.파일명칭.확장자이름);
+    파일에 작성된 문자열을 읽는 기능
+     */
+    public void reaStrinMethod() throws IOException {
+        Files.readString(path);
+        // Files.readString(path, StandardOpenOption.READ); 이미 READ가 기본값이기 때문에 추가 작성 불가
+
+    }
+
+
+
 }
